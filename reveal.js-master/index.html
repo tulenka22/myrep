@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/dracula.css">
+		<link rel="stylesheet" href="css/styles_event_loop.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -17,91 +18,131 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section><h1 style="font-size: 50px; color: #FFD761">История развития HTML</h1></section>
 				<section>
-					<h1 style="font-size: 40px; color: #FFD761">Что?</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">HTML это наследник SGML, вот только создавался он для того, чтобы им могли пользоваться и люди-неспециалисты в области верстки. Т.е. уже с первых дней у HTML были такие плюсы:
-					<ul style="font-size: 24px; color: #DFFFDC; margin-left: 100px ">
-						<li>Простота - за счет небольшого набора структурных элементов – дескрипторов (они же «теги»). Все теги пишутся в угловых скобках, и несут какую-то смысловую нагрузку</li>
-						<li>Возможность форматировать документ без привязки к средствам отображения (будь то монитор компьютера, экранчик телефона, или ридер)</li>
-					</ul>
-					</p>
+					<h1>Event loop</h1>
 				</section>
 				<section>
-					<h1 style="font-size: 40px; color: #FFD761">Кто?</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">Британец Тимоти Джон Бернерс-Ли в Женевском ЦЕРНе изобрел язык гипертекстовой разметки,
-					он же HyperText Markup Language, он же HTML,
-					предназначенный для разметки и оформления документов World Wide Web.</p>
-					<img src="1.jpg"; width="500px"; height="300px"/>
+					<h2>js без евентлуп</h2>
+					<p>Без использования Event loop java script выполняет задачи почереди</p>
+					<code><pre>
+function sum(a,b){
+	return a+b;
+}
+cont first = sum(a:5, b:5)
+const second = sum(a:1, b:3)
+					</pre>
+					</code>
 				</section>
-				<section>
-					<h1 style="font-size: 40px; color: #FFD761">Когда?</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">И как вы уже, наверное, догадались, первый в мире веб-сайт создал тоже Тим Бернерс-Ли. И если точная дата изобретения HTML не известна (т.к. это был долгосрочный проект), то день рождения первого сайта очень даже - это было 6 августа 1991 года.
-				Кстати, его можно увидеть и сегодня, правда уже в архиве.</p>
-					<img src="2.png"; width="600px"; height="300px" />
-				</section>
-				<section>
-					<h1 style="font-size: 40px; color: #FFD761">Релиз?</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">HTML 1.0 был представлен в 1993 году и стал первым шагом к созданию стандартизированного языка разметки для веб-страниц. В этой версии были определены основные теги, такие как &ltp&gt, &lta&gt, &ltimg&gt, &lth1&gt и другие, которые используются до сих пор.</p>
-				</section>
-				<section>
-					<h1 style="font-size: 40px; color: #FFD761">HTML 2.0</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">
-						Вышел 22 сентября 1995. Процесс разработки HTML 2.0 и утверждения новой версии был очень неспешным, а единственным заметным улучшением новой версии стали:
-						<ul style="font-size: 24px; color: #DFFFDC; margin-left: 100px ">
-							<li>Запросы: например поиск по ключевым словам.</li>
-							<li>Формы для передачи данных с компьютера на сервер: например ввести дату рождения или выбрать один из нескольких вариантов в опроснике.</li>
-						</ul>
-					</p>
-					<img src="3.png" ; width="600px" ; height="300px" />
-				</section>
-				<section>
-					<h1 style="font-size: 40px; color: #FFD761">HTML 3.0</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">
-						Март 1995 – начало работы над HTML 3.0
-						Первый вариант стандарта включал в себя много интересностей:
-						<ul style="font-size: 24px; color: #DFFFDC; margin-right: 300px ">
-							<li>
-								теги для создания таблиц
-							</li>
-							<li>
-								разметки математических формул
-							</li>
-							<li>
-								обтекание изображений текстом и др
-							</li>
-						</ul>
 
-					</p>	
-					<p style="font-size: 26px; color: #C4FEE0 ">
-						Версия 3.2 вышла спустя месяц после утверждения CSS, и была уже полностью приспособлена к взаимодействию с таблицами стилей.
-						В ней были опущены многие нововведения версии 3.0, но добавлены нестандартные элементы, поддерживаемые браузерами Netscape Navigator и Internet Explorer 3.
+				<section>
+					<h2>Что такое Event loop</h2>
+					<p>Event Loop — механизм, который управляет асинхронными операциями в JavaScript. Он позволяет обрабатывать задачи, не блокируя основной поток выполнения программы. Это особенно важно для создания отзывчивых интерфейсов пользователя и эффективной работы серверов.</p>
+				</section>
+
+				<section>
+					<h2>Для чего Event loop</h2>
+					<p style="text-align:left">
+						Основная цель Event Loop — циклическое выполнение задач, которые делятся на две категории:
 					</p>
+						<ul style="">
+							<li>Синхронные задачи — выполняются немедленно;</li>
+							<li>Асинхронные задачи — добавляются в очередь и выполняются позже.</li>
+						</ul>
 					
+
+				</section>
+
+
+				<section>
+					<h2>Web API</h2>
+					<p>WebApi - это интерфейс, предоставляемый браузером. Р егистрирует события благодаря этому интерфейс не блокируется</p>
+					<article style="display: flex;">
+					<code><pre>
+function log(value){
+	console.log(value)
+}
+
+log(value:'start')
+
+setTimeout(handler:() =>{
+	log(value:'timeout')
+}, timeout:3000);
+
+
+log(value:'end')
+</pre></code>
+					<code><pre>
+const button1 = document.getElementById(elementid:'button1');
+const button2 = document.getElementById(elementid:'button2');
+
+
+button1.addEventListener(type:'click', listener.()=>{
+	log(value:'click1')
+})
+
+button2.addEventListener(type:'click', listener.()=>{
+	log(value:'click1')
+})
+
+</pre></code>
+						</article>
 				</section>
 				<section>
-					<h1 style="font-size: 40px; color: #FFD761">CSS</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">
-						CSS (Cascading Style Sheets) - это таблицы стилей, которые присоединяются к документу HTML и служат для визуального оформления тех или иных частей документа.
-						С помощью CSS создатель веб-страницы наконец мог спокойно менять шрифт и размер чего угодно, и что важно – это стало возможным не за счет внедрения кучи новых тегов, а с помощью механизма, который влиял на интерпретацию уже существующих тегов HTML.
-					</p>
+					<h2>Макрозадачи и микрозадачи</h2>
+					<p>Одним из ключевых аспектов работы event loop выступают макрозадачи (macrotasks) и микрозадачи (microtasks). Они представляют собой две очереди задач, которые имеют различный приоритет выполнения.</p>
+					<article style="display:flex">
+						<div>
+							<h3 style="color:bisque;text-align:center">Макрозадачи</h3>
+							<p>Выполняются после завершения текущей синхронной задачи.</p> 
+							<p>Примеры:</p>
+							<ul>
+								
+								<li>таймеры (setTimeout, setInterval);</li>
+								<li>события пользовательского интерфейса (например, клики мыши);</li>
+								<li>сетевые запросы (например, fetch или XMLHttpRequest);</li>
+							</ul>
+						</div>
+						<div>
+							<h3 style="color: bisque; text-align: center">Микрозадачи</h3>
+							<p>Выполняются сразу после завершения текущей синхронной задачи, но перед началом следующей макрозадачи.</p>
+
+							<p>Примеры:</p>
+							<ul><li>Промисы (Promise.resolve(), Promise.reject()).MutationObserver.async/await).</li></ul>
+						</div>
+					</article>
 				</section>
 				<section>
-					<h1 style="font-size: 40px; color: #FFD761">HTML 4.0</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">
-						В этой версии изрядно подчистили элементы из предыдущих версий. Многие теги были отмечены как устаревшие и не рекомендованные к использованию. Вместо них нужно было использовать таблицы стилей CSS.
-						Новая версия включала поддержку фреймов, скриптов, общую процедуру внедрения разных объектов. Также в ней были усовершенствованы таблицы и формы.
-						
-					</p>
-					<img src="4.png" ; width="600px" ; height="300px" />
+					<section>
+						<h2>Приоритет выоплнения</h2>
+						<p>Схема приоритетов выполнения:</p>
+						<ol>
+							<li>Сначала выполняется текущий синхронный код;</li>
+							<li>Затем выполняются все микрозадачи в очереди Microtask queue до тех пор, пока очередь не станет пустой;</li>
+							<li>После этого выполняется следующая макрозадача из очереди Macrotask queue и т.д.</li>
+						</ol>
+						<img src="present.gif" style="width:500px" />
+					</section>
+					<section>
+						<h3>Пример</h3>
+						<code><pre>
+log(value:'1')
+
+setTimeout(handler()=>{
+	log(value:'2')
+}, timeout:0)
+
+Promise.resolve().then(() =>{
+	log(value:'3')
+})
+
+log(value:'4')
+</pre></code>	
+						<p>Порядок выполнения:1-4-3-2</p>
+					</section>
 				</section>
 				<section>
-					<h1 style="font-size: 40px; color: #FFD761">HTML 5.0</h1>
-					<p style="font-size: 26px; color: #C4FEE0 ">HTML5 предлагает программные интерфейсы (API) для обработки видео и аудио, реализации чатов, включая видеочаты через браузер, а также множество других увлекательных интерактивных возможностей. Даже браузерные игры разрабатываются с использованием HTML5.</p>
-					<video controls width="500" height="300">
-						<source src="4.mp4">
-						<source src="4.webm">
-					</video>
+					<h2>Отрисовка(Render)</h2>
+					<img src="2.png" />
 				</section>
 			</div>
 		</div>
