@@ -1,0 +1,40 @@
+pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 16px;
+    border-radius: 4px;
+/*    tab-size: 4;*/
+    overflow-x: auto;
+    margin: 12px 2px;
+}
+
+code {
+    display: block;
+    white-space: pre;
+    padding: 16px;
+}
+section{
+    font-size:1.8rem
+}
+article{
+    justify-content:center
+}
+article div{
+    width:500px;
+    height:auto;
+    margin: 0px 5px;
+    font-size:1.4rem;
+    border-radius:10px;
+    border-width:1px;
+    border-style:solid;
+    border-color: aquamarine;
+    justify-content:left;
+    word-break:break-word;
+    text-align:left;
+    padding:20px
+      
+    
+}
