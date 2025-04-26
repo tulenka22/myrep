@@ -1,0 +1,204 @@
+﻿body {
+    display: grid;
+    grid-template-columns: 20vw 60vw 20vw;
+    grid-template-rows:7vh 1fr ;
+    height: 100vh;
+    grid-template-areas:
+        "h h h"
+        "n o b"
+        "d d d"
+        "f f f";
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F5F5DC;
+}
+.editorial {
+    grid-area: d;
+}
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation {
+    margin-left: 0vw;
+    margin-top: 6vh;
+    width: 10vw;
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #8B0000;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+    /*    max-height:66vh;*/
+}
+
+
+
+    .navigation ol li {
+        margin-bottom: 2vh;
+        
+
+    }
+    .navigation ol {
+        display:flex;
+        flex-direction:column;
+        color: #FFF8DC;
+        background-color: #8B0000;
+        padding: 5px 10px;
+        border-radius: 8px;
+        gap: 25px;
+    }
+
+    .navigation ol li a {
+        text-decoration: none;
+        color: #FFF8DC;
+        font-size: 24px;
+        transition: color 0.3s ease;
+    }
+
+            .navigation ol li a:hover {
+                color: #DAA520;
+            }
+
+#h {
+    grid-area: h;
+}
+
+#o {
+    grid-area: o;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top:1vh
+
+}
+#o section h1,h2{
+    text-align:center;
+}
+#o section {
+    padding: 0.8vh 0.5vw;
+    text-align: justify;
+    max-width: 600px;
+    font-size: 1.5rem
+}
+
+#o section article{
+    text-align:justify;
+} 
+
+#o section {
+
+    margin:0px 190px;
+
+
+}
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .image-container img {
+        width:40vw;
+        max-width: 600px;
+/*        height: auto;*/
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #8B0000;
+}
+
+p {
+    font-size: 1.2em;
+    color: #5C4D3D;
+    /*    max-width: 600px;*/
+    line-height: 1.6;
+}
+#o section #info_food {
+    border: 5px dotted #DAA520;
+    background-color: #FFF8F0;
+    padding: 20px;
+}
+h2{
+    font-size:2.2em;
+}
+.rec_ul {
+    text-align: left;
+    background-color: #FFF8F0;
+    padding-top:5px;
+    padding-bottom:5px
+}
+article {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 600px;
+    line-height: 1.6;
+}
+#ppp{
+    font-size:1.2em
+}
+#churka{
+    width:100%;
+    height:10vh;
+    background-color:white;
+}
+#bit {
+    display: inline-block;
+    font-size: 7em;
+    padding: 20px 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 5%;
+    background-color: darkorange
+}
+.osnova p {
+/*    width:120%;*/
+    text-align:justify;
+    }
+
+.step{
+
+    font-weight:bold;
+
+}
+article ul {
+    border: 2px dashed black;
+}
+.rec {
+    padding: 0.8vh 0.5vw;
+    text-align: justify;
+    max-width: 600px;
+    font-size: 1.3rem;
+    
+}
+#huy{
+    grid-area:b;
+    width: 20vw;
+
+}
+
+
+
+#pidor {
+    top: 70px;
+    width: 20vw;
+    height: 93vh;
+    position: fixed;
+    background-color: #F5F5DC;
+    z-index: 5;
+    transition: height 0.1s ease;
+    transform: rotate(3.142rad);
+}
+

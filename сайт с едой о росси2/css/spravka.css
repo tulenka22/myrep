@@ -1,0 +1,19 @@
+﻿#spravka{
+    margin:10vh 10vw;
+}
+
+#spravka h1 {
+    font-size: 30px;
+    color: #8b0000;
+    justify-content: center;
+    text-align: center
+}
+
+#spravka ul {
+    display:flex;
+    flex-direction:column;
+    font-size: 24px;
+    color: #5c4d3d;
+    text-align:left;
+    gap:15px
+}
