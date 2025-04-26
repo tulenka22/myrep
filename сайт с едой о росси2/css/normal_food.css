@@ -184,19 +184,30 @@ article ul {
     
 }
 #huy{
-    grid-area:b;
-    width: 20vw;
-
+    /* grid-area:b; */
+    /* width: 10vw; */
+    height: 100vh;
+    position: fixed;
+    right: 0;
 }
 
-
+#huy img {
+    width: 100%;
+    height: 100%;
+}
 
 #pidor {
     top: 70px;
-    width: 20vw;
-    height: 93vh;
-    position: fixed;
-    background-color: #F5F5DC;
+    /* width: 20vw; */
+    width: auto;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    
+    /* height: 93vh; */
+    /* position: fixed; */
+    /* background-color: #F5F5DC; */
+    backdrop-filter: saturate(0%);
     z-index: 5;
     transition: height 0.1s ease;
     transform: rotate(3.142rad);
