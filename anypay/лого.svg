@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="150" viewBox="0 0 250 150">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke-width: 12.76px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #dcdcdc;
+        stroke: #d2d2d2;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        font-size: 48px;
+        fill: #ff0;
+        font-family: Tahoma;
+      }
+    </style>
+  </defs>
+  <circle id="Эллипс_1" data-name="Эллипс 1" class="cls-1" cx="42.5" cy="67.5" r="39.5"/>
+  <path id="Прямоугольник_1" data-name="Прямоугольник 1" class="cls-2" d="M41,39h4V96H41V39Zm0,0h4V96H41V39Z"/>
+  <rect id="Прямоугольник_2" data-name="Прямоугольник 2" class="cls-3" x="16" y="65" width="57" height="4"/>
+  <text id="проСТО" class="cls-4" x="81.292" y="81.526">проСТО</text>
+</svg>
